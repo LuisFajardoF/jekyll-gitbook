@@ -1,7 +1,7 @@
 <div class="book-summary">
-    <div id="book-search-input" role="search">
+    <!-- <div id="book-search-input" role="search">
         <input type="text" placeholder="Type to search" />
-    </div>
+    </div> -->
     <nav role="navigation">
         <ul class="summary">
             {% if page.url == "/index.html" or page.url == "/" %}
@@ -9,9 +9,14 @@
             {% else %}
             <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
             {% endif %}
-                <a href="{{site.baseurl}}">
+                <p></p>
+                <center>
+                    <img src="{{site.baseurl}}/gitbook/images/md2tex-toc.png"
+                        alt="md2tex toc" width="140" height="60">
+                </center>
+                <h2><a href="{{site.baseurl}}">
                     {{ site.title | escape }}
-                </a>
+                </a></h2>
             </li>
 
             <li class="divider"></li>
@@ -31,10 +36,10 @@
             {% endfor %}
 
             <li class="divider"></li>
-
+            
             <li>
-                <a href="https://github.com/sighingnow/jekyll-gitbook/fork" target="blank" class="gitbook-link">
-                    Fork it Now!
+                <a href="{{site.baseurl}}/resources.html">
+                    Recursos
                 </a>
             </li>
         </ul>

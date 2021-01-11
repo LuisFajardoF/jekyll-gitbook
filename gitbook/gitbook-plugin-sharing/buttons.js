@@ -1,51 +1,27 @@
 require(['gitbook', 'jquery'], function(gitbook, $) {
     var SITES = {
-        'facebook': {
-            'label': 'Facebook',
-            'icon': 'fa fa-facebook',
+        'github': {
+            'label': 'GitHub',
+            'icon': 'fab fa-github',
             'onClick': function(e) {
                 e.preventDefault();
-                window.open('http://www.facebook.com/sharer/sharer.php?s=100&p[url]='+encodeURIComponent(location.href));
+                window.open('https://github.com/LuisFajardoF');
             }
         },
-        'twitter': {
-            'label': 'Twitter',
-            'icon': 'fa fa-twitter',
+        'telegram': {
+            'label': 'Telegram',
+            'icon': 'fab fa-telegram', 
             'onClick': function(e) {
                 e.preventDefault();
-                window.open('http://twitter.com/home?status='+encodeURIComponent(document.title+' '+location.href));
+                window.open('https://t.me/luis96791');
             }
         },
-        'google': {
-            'label': 'Google+',
-            'icon': 'fa fa-google-plus',
+        'download': {
+            'label': 'Download',
+            'icon': 'fas fa-download', 
             'onClick': function(e) {
                 e.preventDefault();
-                window.open('https://plus.google.com/share?url='+encodeURIComponent(location.href));
-            }
-        },
-        'weibo': {
-            'label': 'Weibo',
-            'icon': 'fa fa-weibo',
-            'onClick': function(e) {
-                e.preventDefault();
-                window.open('http://service.weibo.com/share/share.php?content=utf-8&url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title));
-            }
-        },
-        'instapaper': {
-            'label': 'Instapaper',
-            'icon': 'fa fa-instapaper',
-            'onClick': function(e) {
-                e.preventDefault();
-                window.open('http://www.instapaper.com/text?u='+encodeURIComponent(location.href));
-            }
-        },
-        'vk': {
-            'label': 'VK',
-            'icon': 'fa fa-vk',
-            'onClick': function(e) {
-                e.preventDefault();
-                window.open('http://vkontakte.ru/share.php?url='+encodeURIComponent(location.href));
+                window.open('https://luisfajardof.github.io/md2tex-docs/download.html');
             }
         }
     };
@@ -71,7 +47,7 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
                 icon: 'fa fa-share-alt',
                 label: 'Share',
                 position: 'right',
-                dropdown: [menu]
+                dropdown: menu
             });
         }
 
@@ -81,6 +57,7 @@ require(['gitbook', 'jquery'], function(gitbook, $) {
 
             gitbook.toolbar.createButton({
                 icon: site.icon,
+                title: site.title,
                 label: site.text,
                 position: 'right',
                 onClick: site.onClick
